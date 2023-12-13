@@ -12,7 +12,7 @@ const Products = () => {
     <>
       <h1>Products</h1>
       {DUMMY_PRODUCTS.map((prod) => (
-        <li>
+        <li key={prod.id}>
           <Link to={`/products/${prod.id}`}>{prod.name}</Link>
         </li>
       ))}

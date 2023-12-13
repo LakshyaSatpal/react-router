@@ -4,15 +4,23 @@ import ErrorPage from "./pages/Error";
 import ProductsPage from "./pages/Products";
 import RootLayout from "./Root";
 import ProductInfoPage from "./pages/ProductInfo";
+import TodosPage from "./pages/Todos";
+
+import { todosLoader } from "./pages/Todos";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-    errorElement: <ErrorPage />,
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/products", element: <ProductsPage /> },
+      {
+        path: "/todos",
+        element: <TodosPage />,
+        loader: todosLoader,
+        errorElement: <ErrorPage />,
+      },
       { path: "/products/:id", element: <ProductInfoPage /> },
     ],
   },
