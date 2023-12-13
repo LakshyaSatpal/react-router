@@ -17,9 +17,7 @@ const TodosPage = () => {
 
 export async function todosLoader() {
   try {
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/todos/acsklnm"
-    );
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos/");
     if (!response.ok) {
       throw new Response("Error in fetching Todos", {
         status: response.status,
