@@ -7,6 +7,8 @@ import ProductInfoPage from "./pages/ProductInfo";
 import TodosPage from "./pages/Todos";
 
 import { todosLoader } from "./pages/Todos";
+import NewProductPage from "./pages/NewProduct";
+import { action as newProductAction } from "./pages/NewProduct";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,7 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       { path: "/products/:id", element: <ProductInfoPage /> },
+      { path: "/new", element: <NewProductPage />, action: newProductAction },
     ],
   },
 ]);

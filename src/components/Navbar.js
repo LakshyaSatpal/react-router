@@ -37,6 +37,16 @@ const Navbar = () => {
             Todos
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/new"
+            className={({ isActive }) =>
+              isActive ? classes.active : undefined
+            }
+          >
+            New Product
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
